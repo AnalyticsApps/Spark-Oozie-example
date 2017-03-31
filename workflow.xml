@@ -1,0 +1,30 @@
+<workflow-app xmlns="uri:oozie:workflow:0.4" name="Spark_Oozie_example_wf">
+    <start to="testShell"/>
+    <action name="testShell">
+        <shell xmlns="uri:oozie:shell-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <exec>SampleScript.sh</exec>
+           <argument>${numExecutors}</argument>
+           <argument>${driverMemory}</argument>
+           <argument>${sparkQueueName}</argument>
+           <argument>${inputArgument}</argument>
+	    <file>scripts/SampleScript.sh#SampleScript.sh</file>
+	    <file>lib/spark-examples.jar#spark-examples.jar</file> 	
+ 	    <capture-output/>
+        </shell>
+        <ok to="end"/>
+        <error to="fail"/>
+    </action>
+    <kill name="fail">
+        <message>Shell action failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+ 
+    <end name="end"/>
+</workflow-app>
