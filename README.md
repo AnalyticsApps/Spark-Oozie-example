@@ -1,7 +1,5 @@
 # Spark_Oozie_example
 
-@Author=Nisanth Simon
-
 
 Steps to run the project
 
@@ -22,3 +20,7 @@ Steps to run the project
 
 	# Run the Oozie Job
 	./oozie job -run -config /opt/Spark_Oozie_example/job.properties 
+
+## Authors
+
+*Nisanth Simon* 
