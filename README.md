@@ -23,7 +23,7 @@ Steps to run the project
 
 ## Author
 
-*Nisanth Simon* - [NisanthSimon@LinkedIn]
+**Nisanth Simon** - [NisanthSimon@LinkedIn]
 
 
 [NisanthSimon@LinkedIn]: https://au.linkedin.com/in/nisanth-simon-03b2149
